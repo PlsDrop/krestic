@@ -4,13 +4,13 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
-namespace krestic
+namespace krestic.server.game
 {
     class Game
     {
-        public const string WIN = "win";
-        public const string DRAW = "draw";
-        public const string CONTINUE = "continue";
+        internal const string WIN = "win";
+        internal const string DRAW = "draw";
+        internal const string CONTINUE = "continue";
 
         private string[,] field = 
         { 
@@ -22,28 +22,28 @@ namespace krestic
         private string status = "";
         private int playersMoveCounter = 0;
 
-        public string[] GetField()
+        internal string[] GetField()
         {
             return new string[] { field[0, 0], field[0, 1], field[0, 2], field[1, 0], field[1, 1], field[1, 2], field[2, 0], field[2, 1], field[2, 2] };
         }
         
-        public int GetMoves()
+        internal int GetMoves()
         {
             return playersMoveCounter;
         }
 
-        public string GetStatus()
+        internal string GetStatus()
         {
             return status;
         }
 
-        public bool GetError()
+        internal bool GetError()
         {
             return error;
         }
 
 
-        public void InputXY(string turn, int Y, int X)
+        internal void InputXY(string turn, int Y, int X)
         {
             X = X - 1;
             Y = Y - 1;
@@ -69,7 +69,7 @@ namespace krestic
             return;
         }
 
-        public void CheckStatus()
+        internal void CheckStatus()
         {
             //horisontal check
             if (((field[0, 0] == field[0, 1]) && (field[0, 1] == field[0, 2])) && (field[0, 0] != " "))

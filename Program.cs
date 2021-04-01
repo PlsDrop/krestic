@@ -3,17 +3,23 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using krestic.server;
 
 namespace krestic
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] array)
         {
             
-            NetServer gameServer = new NetServer();
-            NetGame netGame1 = new NetGame();
-            gameServer.Start(netGame1);
+            NetServer gameServer = new NetServer(array);
+            gameServer.Start();
+            
+
+
+
+
+
 
             // Game game1 = new Game();
             // int Y;
