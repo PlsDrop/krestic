@@ -86,7 +86,7 @@ namespace krestic.server
                         else if (status == Game.DRAW)
                         {
                             player1.WriteLine("Draw!");
-                            player1.WriteLine("Draw!");
+                            player2.WriteLine("Draw!");
                             break;
                         }
                     }
