@@ -49,13 +49,13 @@ namespace krestic.server.game
 
         internal int ParseY()
         {
-            WriteLine("Input Y:");
+            WriteLine("Input Y (1-3):");
             return Int32.Parse(ReadLine());
         }
 
         internal int ParseX()
         {
-            WriteLine("Input X:");
+            WriteLine("Input X (1-3):");
             return Int32.Parse(ReadLine());
         }
         
